@@ -2,9 +2,9 @@ Project Name: Laboratory Ordering System
 
 Function: System that allows scientist and lab assistants to order items they need. 
 
-1.	Must sign in with unique employee ID#. All Scientists will sign in with 123 and all Lab Assistants will sign in with 456. Will provide input 	validation. Will save information to DB.
-2.	Lab Assistants can only order blood or withdraw blood. Scientist can order blood withdraw blood and order lab kits. 
-3.	System will show a running count of the current count for item and then the current count. 
+1.	Must sign in with unique employee ID#. All Scientists will sign in with 123 and all Lab Assistants will sign in with 456. Will provide input validation. Will save information to DB.
+2.	Lab Assistants can only order blood or withdraw blood. Scientist can order blood, withdraw blood and order lab kits. 
+3.	System will show a current count for item and then the current count again after each transaction. (Subtracting and adding to that count as need, depending on transaction)
 4.	System will show validation for selection made. 
 
 
@@ -28,7 +28,7 @@ Selection within Menu
 		How much blood do you want to order? 
 		a.	50 units
 		b.	100 units
-	Then return the new Blood Count based on their selection. Along with statement asking if they want to exit Yes or No. 
+	After User selects input, then return the new Blood Count based on their selection. Along with statement asking if they want to exit Yes or No. 
 	IF No loop back and present question again, if Yes exit back to Option page. 
 
 	B. Process Flow: If User Selects Withdrawal Blood, Then show the following:  
@@ -36,7 +36,7 @@ Selection within Menu
 		How much blood do you want to withdrawl? 
 		a.	50 units
 		b.	100 units
-	Then return the new Blood Count based on their selection. Along with statement asking if they want to exit Yes or No. 
+	After User selects input, Then return the new Blood Count based on their selection. Along with statement asking if they want to exit Yes or No. 
 	IF No loop back and present question again, if Yes exit back to Option page. 
 
 	C. Process Flow: If User Selects Lab Kits, Then show the following:  
@@ -44,7 +44,10 @@ Selection within Menu
 		How many kits do you want to order? 
 		a.	10 units
 		b.	20 units
-	Then return the new Lab Kit Count based on their selection. Along with statement asking if they want to exit Yes or No.  IF No loop back and 	present question again, if Yes exit back to Option page. 
+	After User select input, Then return the new Lab Kit Count based on their selection. Along with statement asking if they want to exit Yes or No.  IF No loop back and 	present question again, if Yes exit back to Option page. 
+
+	D. Process Flow: If User Selects to Exit, Then show the following statement
+		You have exited the system. Goodbye! 
 
 
 
