@@ -1,0 +1,5 @@
+C:\Users\U1J447\Revature\Practice\JdotHoff-Projects\ProjectOne\obj\Debug\net8.0\ProjectOne.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\U1J447\Revature\Practice\JdotHoff-Projects\ProjectOne\obj\Debug\net8.0\ProjectOne.AssemblyInfoInputs.cache
+C:\Users\U1J447\Revature\Practice\JdotHoff-Projects\ProjectOne\obj\Debug\net8.0\ProjectOne.AssemblyInfo.cs
+C:\Users\U1J447\Revature\Practice\JdotHoff-Projects\ProjectOne\obj\Debug\net8.0\ProjectOne.csproj.CoreCompileInputs.cache
+C:\Users\U1J447\Revature\Practice\JdotHoff-Projects\ProjectOne\obj\Debug\net8.0\ProjectOne.sourcelink.json
