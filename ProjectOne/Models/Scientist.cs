@@ -8,7 +8,7 @@ class Scientist
 
     public Scientist()
     {
-        Id = 456
-        Title = Scientist;
+        Id = 456;
+        Title = "Scientist";
     }
 }
