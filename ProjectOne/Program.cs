@@ -6,8 +6,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        Blood blood = new Blood();
-        var assistant = new LabAssistant();
+        LabRepo labRepo = new LabRepo();
+        MainMenuLab(labRepo);
     }
 
     private static void SignIn(LabRepo lr)
@@ -17,7 +17,7 @@ class Program
 
     private static void MainMenuLab (LabRepo lr)
     {
-        System.Console.WriteLine("Welcome!" + LabAssitant.Title );
+        System.Console.WriteLine("Welcome! " + LabAssitant.Title );
         bool willContiue =true;
         while (willContiue)
         {
@@ -61,9 +61,9 @@ class Program
     }
 
 
-     private static void MainMenuScien (LabRepo lr)
+     private static void MainMenuScientist (LabRepo lr)
     {
-        System.Console.WriteLine("Welcome!" + Scientist.Title );
+        System.Console.WriteLine("Welcome! " + Scientist.Title );
         bool willContiue =true;
         while (willContiue)
         {
@@ -90,17 +90,17 @@ class Program
         {
             case 1:
                 {
-                    OrderBlood(lr);
+                    OrderBloodMenu(lr);
                     break;
                 }
             case 2:
                 {
-                    WithdrawBlood(lr);
+                    WithdrawBloodMenu(lr);
                     break;
                 }
             case 3:
                 {
-                    OrderLabKits(lr);
+                    LabKitsMenu(lr);
                     break;
                 }
            

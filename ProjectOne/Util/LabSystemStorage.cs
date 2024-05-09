@@ -1,4 +1,4 @@
-class LabSystemStorage
+public class LabSystemStorage
 {
     
 }
