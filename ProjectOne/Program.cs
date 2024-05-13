@@ -1,23 +1,41 @@
 ﻿
 using System;
-
-
 class Program
 {
+
+    //This program will allow Scientist and Lab Assitants to order or withdrawl blood and order lab kits depending upon their role. 
+    //Scientists can order or withdrawl blood and order lab kits
+    //Lab Assitants can order or withdrawl blood
+
+
     static void Main(string[] args)
     {
+
+ 
         LabRepo labRepo = new LabRepo();
         MainMenuLab(labRepo);
     }
 
-    private static void SignIn(LabRepo lr)
+    public static int SignIn(LabRepo lr)
     {
-
+//First they want to log in to the application to see what they can do. 
+        System.Console.WriteLine("_________________________");
+        System.Console.WriteLine("     Lab Order Inc.      ");
+        System.Console.WriteLine("_________________________");
+        System.Console.WriteLine();
+        System.Console.WriteLine("Please Login using your 3 digit number.(no spaces)");
+        System.Console.WriteLine();
+        int input = int.Parse(Console.ReadLine() ?? "0");
     }
+
+
+
+
+
 
     private static void MainMenuLab (LabRepo lr)
     {
-        System.Console.WriteLine("Welcome! " + LabAssitant.Title );
+        System.Console.WriteLine("Welcome! " user.usertitle+ User.FirstName + User.LastName);
         bool willContiue =true;
         while (willContiue)
         {
