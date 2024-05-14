@@ -1,9 +1,10 @@
-class LabSystem
+public class LabSystem
 {
     public int Id{get; set; }
     public string ItemName {get; set;}
-    public int CurrentCount{get; set; }
-    public int User? Id{get; set;}
+    public int CurrentBloodCount{get; set; }
+    public int CurrentLabkitCount{get; set; }
+    public int UserId{get;set;}
 
     //No Arg constructor
     public LabSystem()
@@ -12,16 +13,17 @@ class LabSystem
     }
 
     //Full Arg Constructor
-    public LabSystem(int id, string itemname, int currentcount, int user?id)
+    public LabSystem(int id, string itemname, int currentbloodcount, int currentlabkitcount,int userid)
     {
         Id=id;
         ItemName = itemname;
-        CurrentCount = currentcount;
-        user?Id = user?id; 
+        CurrentBloodCount = currentbloodcount;
+        CurrentLabkitCount = currentlabkitcount; 
+        userId = userid; 
     }
 
     public override string ToString()
     {
-        return 
+        
     }
 }

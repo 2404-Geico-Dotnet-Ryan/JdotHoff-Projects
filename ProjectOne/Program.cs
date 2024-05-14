@@ -23,7 +23,7 @@ class Program
         System.Console.WriteLine("     Lab Order Inc.      ");
         System.Console.WriteLine("_________________________");
         System.Console.WriteLine();
-        System.Console.WriteLine("Please Login using your 3 digit number.(no spaces)");
+        System.Console.WriteLine("Please Login using your 3 digit login number.(no spaces)");
         System.Console.WriteLine();
         int input = int.Parse(Console.ReadLine() ?? "0");
     }
@@ -32,17 +32,17 @@ class Program
 
 
 
-
+//This is the menu for the Lab Assistants
     private static void MainMenuLab (LabRepo lr)
     {
-        System.Console.WriteLine("Welcome! " user.usertitle+ User.FirstName + User.LastName);
+        System.Console.WriteLine("Welcome! " + user.usertitle + User.FirstName + User.LastName);
         bool willContiue =true;
         while (willContiue)
         {
             System.Console.WriteLine("Please make a selection.");
             System.Console.WriteLine("*************************");
             System.Console.WriteLine("[1] Order Blood");
-            System.Console.WriteLine("[2] Withdraw Blood");
+            System.Console.WriteLine("[2] Withdrawl Blood");
             System.Console.WriteLine("[0] Exit");
             System.Console.WriteLine("*************************");
 
@@ -135,7 +135,7 @@ class Program
     
  private static void OrderBloodMenu (LabRepo lr)
     {
-        System.Console.WriteLine("Current Blood Count = " + BldUnits);
+        System.Console.WriteLine("Current Blood Count = " + CurrentCount);
         bool willContiue =true;
         while (willContiue)
         {
@@ -237,7 +237,7 @@ private static void WithdrawBloodMenu (LabRepo lr)
         }
     }
 
-    private static bool DecideNextOptionL(LabRepo lr, int input)
+    private static bool LabKitsMenu(LabRepo lr, int input)
     {
         
         switch (input)
