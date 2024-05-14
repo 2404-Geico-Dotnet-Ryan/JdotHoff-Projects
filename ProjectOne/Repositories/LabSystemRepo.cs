@@ -9,13 +9,13 @@ class LabRepo
 
     //Input is the their login number
     //return the persons Name and Title
-    public void UserLogin()
+    public void UserLogin(int UserLogin)
     {
         if (userStorage.users.ContainsKey(id))
         {
             return userStorage.users[id];
         }
-        /* We will let user know the passed in PetId was invalid/not found */
+        // We will let user know the login was invalid
         else
         {
             Console.WriteLine("Login was not found, please try again.");
