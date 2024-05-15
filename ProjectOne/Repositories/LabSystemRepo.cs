@@ -36,37 +36,37 @@ public class LabRepo
 
     public void Sub50()
     {
-        If(currentbloodcount >= 50)
-                {
-            return (currentbloodcount - 50)
-                }
-                else
+        if (currentbloodcount >= 50);
         {
-            System.Console.WriteLine("There is not enough blood currently to withdrawl your selection.")
-                    System.Console.WriteLine("Please make another selection.")
-                }
+            return (currentbloodcount - 50);
+        }
+        else if 
+        {
+            System.Console.WriteLine("There is not enough blood currently to withdrawl your selection.");
+            System.Console.WriteLine("Please make another selection.");
+        }
     }
 
     public void Sub100()
     {
-        If(currentbloodcount >= 100)
-                {
-            return (currentbloodcount - 100)
-                }
-                else
+        if(currentbloodcount >= 100);
         {
-            System.Console.WriteLine("There is not enough blood currently to withdrawl your selection.")
-                    System.Console.WriteLine("Please make another selection.")
-                }
+            return (currentbloodcount - 100);
+        }
+        else if
+        {
+            System.Console.WriteLine("There is not enough blood currently to withdrawl your selection.");
+            System.Console.WriteLine("Please make another selection.");
+        }
     }
 
     public void Add10()
     {
-        return(CurrentLabkitCount + 10)
+        return (CurrentLabkitCount + 10);
     }
 
     public void Add20()
     {
-        return(CurrentLabkitCount +20)
+        return (CurrentLabkitCount + 20);
     }
 }

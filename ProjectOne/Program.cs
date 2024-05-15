@@ -26,6 +26,25 @@ class Program
         System.Console.WriteLine("Please Login using your 3 digit login number.(no spaces)");
         System.Console.WriteLine();
         int input = int.Parse(Console.ReadLine() ?? "0");
+        System.Console.WriteLine("Please enter your first name.");
+        string FirstName = int.Parse(Console.ReadLine() ?? "");
+        User? loggedInUser = loggedInUser (UserLogin, FirstName);
+        if ((loggedInUser != null) + UserLogin = 123)
+        {
+            System.Console.WriteLine("Your login was successful!");
+
+            MainMenuScientist();
+        }
+        else if ((loggedInUser != null) + UserLogin = 456)
+        {
+            System.Console.WriteLine("Your login was successful!");
+
+           MainMenuLab();
+        }
+        else
+        {
+            System.Console.WriteLine("Login failed. Please try again.");
+        }
     }
 
 
