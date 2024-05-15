@@ -4,7 +4,6 @@ public class LabSystem
     public string ItemName {get; set;}
     public int CurrentBloodCount{get; set; }
     public int CurrentLabkitCount{get; set; }
-    public int UserId{get;set;}
 
     //No Arg constructor
     public LabSystem()
@@ -13,17 +12,17 @@ public class LabSystem
     }
 
     //Full Arg Constructor
-    public LabSystem(int id, string itemname, int currentbloodcount, int currentlabkitcount,int userid)
+    public LabSystem(int id, string itemname, int currentbloodcount, int currentlabkitcount)
     {
         Id=id;
         ItemName = itemname;
         CurrentBloodCount = currentbloodcount;
         CurrentLabkitCount = currentlabkitcount; 
-        userId = userid; 
     }
 
     public override string ToString()
     {
-        
+        // #ERROR you cannot leave this method empty because it returns a value.  if waiting to implement use throw new Not Implemented Exception
+        throw new NotImplementedException();
     }
 }

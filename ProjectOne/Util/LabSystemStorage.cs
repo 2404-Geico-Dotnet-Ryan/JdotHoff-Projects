@@ -6,8 +6,8 @@ public class LabSystemStorage
     public LabSystemStorage()
     {
          //Create items in the lab
-       LabSystem lab1 = new (IdCounter, "Blood", 50, 0, null);
-       LabSystem lab2 = new (IdCounter, "LabKit", 0, 50, null);
+       LabSystem lab1 = new (IdCounter, "Blood", 50, 0);
+       LabSystem lab2 = new (IdCounter, "LabKit", 0, 50);
         
     }
     

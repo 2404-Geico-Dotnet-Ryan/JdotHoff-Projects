@@ -1,4 +1,6 @@
-class User
+
+// #ERRROR you cannot use a class in another if it is not public
+public class User
 {
     
     public int UserId{set; get; } //will start at 1 
