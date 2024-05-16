@@ -5,7 +5,7 @@ public class User
     
     public int UserId{set; get; } //will start at 1 
     public int UserType{get; set; } //Used to determine menu display 1=Scientist 2=LabAssistant
-    public int UserLogin{get; set; }
+    public int UserLogin{get; set; }//this will be either 123 for sceintist or 456 for lab assistant
     public string FirstName{ get; set; }
     public string LastName {get; set; }
     public string UserTitle {get; set; }
