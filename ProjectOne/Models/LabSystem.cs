@@ -22,7 +22,12 @@ public class LabSystem
 
     public override string ToString()
     {
-        // #ERROR you cannot leave this method empty because it returns a value.  if waiting to implement use throw new Not Implemented Exception
-        throw new NotImplementedException();
+       string newString = "";
+        newString += "{Id " + Id;
+        newString += ", Item Name " + ItemName;
+        newString += ", Current Blood Count " + CurrentBloodCount;
+        newString += ", Current Lab Kit Count " + CurrentLabkitCount;
+        newString += "}";
+        return newString;
     }
 }
