@@ -70,12 +70,36 @@ class Program
             System.Console.WriteLine("*************************");
 
             int input = int.Parse(Console.ReadLine() ?? "0");
-            //input = ValidationCmd(input, 2);
+            input = ValidationCmd(input, 2);
 
-            // willContiue = DecideNextOptionL(lr, input);
+            willContiue = DecideNextOptionL(input);
         }
     }
 
+    private static bool DecideNextOptionL(int input)
+    {
+     switch (input)
+        {
+            case 1:
+                {
+                    OrderBloodMenu();
+                    break;
+                }
+            case 2:
+                {
+                    WithdrawBloodMenu();
+                    break;
+                }
+            case 0:
+            default:
+                {
+                    return false;
+
+                }
+        }
+
+        return true;
+    }
 
     static int ValidationCmd(int input, int v)
     {
@@ -89,31 +113,31 @@ class Program
 
     }
 
-    static bool DecideNextOptionL(LabRepo lr, int input)
-    {
+    // static bool DecideNextOptionL(LabRepo lr, int input)
+    // {
 
-        switch (input)
-        {
-            case 1:
-                {
-                    OrderBloodMenu(lr);
-                    break;
-                }
-            case 2:
-                {
-                    WithdrawBloodMenu(lr);
-                    break;
-                }
-            case 0:
-            default:
-                {
-                    return false;
+    //     switch (input)
+    //     {
+    //         case 1:
+    //             {
+    //                 OrderBloodMenu();
+    //                 break;
+    //             }
+    //         case 2:
+    //             {
+    //                 WithdrawBloodMenu(lr);
+    //                 break;
+    //             }
+    //         case 0:
+    //         default:
+    //             {
+    //                 return false;
 
-                }
-        }
+    //             }
+    //     }
 
-        return true;
-    }
+    //     return true;
+    // }
 
 
 
@@ -142,39 +166,39 @@ class Program
 
 
 
-// private static bool DecideNextOptionS(LabRepo lr, int input)
-// {
+static bool DecideNextOptionS(LabRepo lr, int input)
+{
 
-//     switch (input)
-//     {
-//         case 1:
-//             {
-//                 OrderBloodMenu(lr);
-//                 break;
-//             }
-//         case 2:
-//             {
-//                 WithdrawBloodMenu(lr);
-//                 break;
-//             }
-//         case 3:
-//             {
-//                 LabKitsMenu(lr);
-//                 break;
-//             }
+    switch (input)
+    {
+        case 1:
+            {
+                OrderBloodMenu();
+                break;
+            }
+        case 2:
+            {
+                WithdrawBloodMenu();
+                break;
+            }
+        case 3:
+            {
+                LabKitsMenu(lr);
+                break;
+            }
 
-//         case 0:
-//         default:
-//             {
-//                 return false;
-//             }
-//     }
+        case 0:
+        default:
+            {
+                return false;
+            }
+    }
 
-//     return true;
-// }
+    return true;
+}
 
 
-private static void OrderBloodMenu(LabRepo lr)
+ static void OrderBloodMenu()
 {
     System.Console.WriteLine("Current Blood Count = " + labSystemStorage.RetrieveCurrentBloodCount());
     bool willContiue = true;
@@ -218,7 +242,7 @@ private static void OrderBloodMenu(LabRepo lr)
 
 
 
-private static void WithdrawBloodMenu(LabRepo lr)
+private static void WithdrawBloodMenu()
 {
     System.Console.WriteLine("Current Blood Count = " + labSystemStorage.RetrieveCurrentBloodCount());
     bool willContiue = true;
@@ -261,22 +285,22 @@ private static void WithdrawBloodMenu(LabRepo lr)
 //     }
 
 
-// private static void LabKitsMenu (LabRepo lr)
-// {
-//     System.Console.WriteLine("Current Lab Kit Count = " + labSystemStorage.RetrieveCurrentLabKitCount());
-//     bool willContiue =true;
-//     while (willContiue)
-//     {
-//         System.Console.WriteLine("How many Lab Kits do you want to order?");
-//         System.Console.WriteLine("[1] 10 Units");
-//         System.Console.WriteLine("[2] 20 Units");
+private static void LabKitsMenu (LabRepo lr)
+{
+    System.Console.WriteLine("Current Lab Kit Count = " + labSystemStorage.RetrieveCurrentLabKitCount());
+    bool willContiue =true;
+    while (willContiue)
+    {
+        System.Console.WriteLine("How many Lab Kits do you want to order?");
+        System.Console.WriteLine("[1] 10 Units");
+        System.Console.WriteLine("[2] 20 Units");
 
-//         int input = int.Parse(Console.ReadLine() ?? "0");
-//         input = ValidationCmd(input, 2);
+        int input = int.Parse(Console.ReadLine() ?? "0");
+        input = ValidationCmd(input, 2);
 
-//         willContiue = DecideNextOptionLK(lr, input);
-//     }
-// }
+        // willContiue = DecideNextOptionLK(lr, input);
+    }
+}
 
 //     private static bool LabKitsMenu(LabRepo lr, int input)
 //     {
