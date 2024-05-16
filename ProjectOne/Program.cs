@@ -113,32 +113,7 @@ class Program
 
     }
 
-    // static bool DecideNextOptionL(LabRepo lr, int input)
-    // {
-
-    //     switch (input)
-    //     {
-    //         case 1:
-    //             {
-    //                 OrderBloodMenu();
-    //                 break;
-    //             }
-    //         case 2:
-    //             {
-    //                 WithdrawBloodMenu(lr);
-    //                 break;
-    //             }
-    //         case 0:
-    //         default:
-    //             {
-    //                 return false;
-
-    //             }
-    //     }
-
-    //     return true;
-    // }
-
+   
 
 
     static void MainMenuScientist()
@@ -161,11 +136,6 @@ class Program
         }
     }
 
-
-
-
-
-
 static bool DecideNextOptionS(LabRepo lr, int input)
 {
 
@@ -183,7 +153,7 @@ static bool DecideNextOptionS(LabRepo lr, int input)
             }
         case 3:
             {
-                LabKitsMenu(lr);
+                LabKitsMenu();
                 break;
             }
 
@@ -285,7 +255,7 @@ private static void WithdrawBloodMenu()
 //     }
 
 
-private static void LabKitsMenu (LabRepo lr)
+private static void LabKitsMenu ()
 {
     System.Console.WriteLine("Current Lab Kit Count = " + labSystemStorage.RetrieveCurrentLabKitCount());
     bool willContiue =true;
