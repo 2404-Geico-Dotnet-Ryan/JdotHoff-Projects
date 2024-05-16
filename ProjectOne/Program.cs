@@ -35,6 +35,10 @@ class Program
         if (loggedInUser != null && loggedInUser.UserLogin == 123)
         {
             System.Console.WriteLine("Your login was successful!");
+
+            MainMenuScientist();
+          
+
             
             // #ERROR this method takes a labrepo has a parameter
             //MainMenuScientist(labRepo);
@@ -43,7 +47,7 @@ class Program
         {
             System.Console.WriteLine("Your login was successful!");
 
-           //MainMenuLab(labRepo, loggedInUser);
+            MainMenuLab();
         }
         else
         {
@@ -52,31 +56,37 @@ class Program
         
 
        
-    }
+    
 
 
 //This is the menu for the Lab Assistants
-    // private static void MainMenuLab (LabRepo lr, User user)
-    // {
-    //     System.Console.WriteLine("Welcome! " + user.UserTitle + user.FirstName + user.LastName);
-    //     bool willContiue =true;
-    //     while (willContiue)
-    //     {
-    //         System.Console.WriteLine("Please make a selection.");
-    //         System.Console.WriteLine("*************************");
-    //         System.Console.WriteLine("[1] Order Blood");
-    //         System.Console.WriteLine("[2] Withdrawl Blood");
-    //         System.Console.WriteLine("[0] Exit");
-    //         System.Console.WriteLine("*************************");
+    
+   static void MainMenuLab()
+    {
+       
+        System.Console.WriteLine("Welcome! ");
+        bool willContiue =true;
+        while (willContiue)
+        {
+            System.Console.WriteLine("Please make a selection.");
+            System.Console.WriteLine("*************************");
+            System.Console.WriteLine("[1] Order Blood");
+            System.Console.WriteLine("[2] Withdrawl Blood");
+            System.Console.WriteLine("[0] Exit");
+            System.Console.WriteLine("*************************");
 
-    //         int input = int.Parse(Console.ReadLine() ?? "0");
-    //         //input = ValidationCmd(input, 2);
+            int input = int.Parse(Console.ReadLine() ?? "0");
+            //input = ValidationCmd(input, 2);
 
-    //         willContiue = DecideNextOptionL(lr, input);
-    //     }
-    // }
+            // willContiue = DecideNextOptionL(lr, input);
+        }
 
-    private static int ValidationCmd(int input)
+
+
+    }
+    
+
+     static int ValidationCmd(int input, int v)
     {
         if (input == 0 || input==1 || input==2 )
         {
@@ -85,53 +95,57 @@ class Program
 
         // wont work if 0 is valid but must return an int
         return 0;
+      
     }
 
-//     private static bool DecideNextOptionL(LabRepo lr, int input)
-//     {
+    // private static bool DecideNextOptionL(LabRepo lr, int input)
+    // {
         
-//         switch (input)
-//         {
-//             case 1:
-//                 {
-//                     OrderBlood(lr);
-//                     break;
-//                 }
-//             case 2:
-//                 {
-//                     WithdrawlBlood(lr);
-//                     break;
-//                 }
-//             case 0:
-//             default:
-//                 {
-//                     return false;
-//                 }
-//         }
+    //     switch (input)
+    //     {
+    //         case 1:
+    //             {
+    //                 // OrderBlood(lr);
+    //                 // break;
+    //             }
+    //         case 2:
+    //             {
+    //                 // WithdrawlBlood(lr);
+    //                 // break;
+    //             }
+    //         case 0:
+    //         default:
+    //             {
+    //                 return false;
+    //             }
+    //     }
 
-//         return true;
-//     }
+    //     return true;
+    
 
 
-    //   private static void MainMenuScientist (LabRepo lr)
-    //  {
-    //      System.Console.WriteLine("Welcome! " + Scientist.Title );
-    //      bool willContiue =true;
-    //      while (willContiue)
-    //      {
-    //          System.Console.WriteLine("Please make a selection.");
-    //          System.Console.WriteLine("*************************");
-    //          System.Console.WriteLine("[1] Order Blood");
-    //          System.Console.WriteLine("[2] Withdraw Blood");
-    //          System.Console.WriteLine("[3] Order Lab Kits");
-    //          System.Console.WriteLine("[0] Exit");
-    //          System.Console.WriteLine("*************************");
-    //          int input = int.Parse(Console.ReadLine() ?? "0");
-    //          input = ValidationCmd(input, 3);
+       static void MainMenuScientist ()
+     {
+         System.Console.WriteLine("Welcome! " );
+         bool willContiue =true;
+         while (willContiue)
+         {
+             System.Console.WriteLine("Please make a selection.");
+             System.Console.WriteLine("*************************");
+             System.Console.WriteLine("[1] Order Blood");
+             System.Console.WriteLine("[2] Withdraw Blood");
+             System.Console.WriteLine("[3] Order Lab Kits");
+             System.Console.WriteLine("[0] Exit");
+             System.Console.WriteLine("*************************");
+             int input = int.Parse(Console.ReadLine() ?? "0");
+            //  input = ValidationCmd(input, 3);
 
-    //          willContiue = DecideNextOptionS(lr, input);
-    //      }
-    //  }
+            //  willContiue = DecideNextOptionS(lr, input);
+         }
+     }
+
+    }
+    }
 
     
     // private static bool DecideNextOptionS(LabRepo lr, int input)
@@ -295,6 +309,6 @@ class Program
 //         return true;
 //     }
 
-}
+// }
 
 

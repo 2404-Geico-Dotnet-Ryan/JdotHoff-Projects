@@ -7,7 +7,7 @@ public class UserService
     
 //Login below will not use the User object, but rather pass in the information needed to login.
 
-    public User Signin (int UserLogin, string FirstName)//; #ERROR no semicolon after a method declaration
+    public User? Signin (int UserLogin, string FirstName)//; #ERROR no semicolon after a method declaration
     {   
     //This is where we would do some validation.
     //For example, we could check if the email is already in use.
@@ -31,7 +31,7 @@ public class UserService
 
         }
 
-        System.Console.WriteLine("Invalid Username or Password");
+        System.Console.WriteLine("Invalid Login or First Name");
         return null; //if the foreach loop completes and no user is found, then the user does not exist in the system.
 
 
