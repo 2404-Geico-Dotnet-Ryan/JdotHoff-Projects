@@ -7,6 +7,7 @@ class Program
     //Scientists can order or withdrawl blood and order lab kits
     //Lab Assitants can order or withdrawl blood
     private static LabSytstemService labSytstemService = new LabSytstemService();
+    private static LabRepo labRepo = new LabRepo();
 
     static void Main(string[] args)
     {
@@ -180,34 +181,34 @@ static bool DecideNextOptionS(int input)
         int input = int.Parse(Console.ReadLine() ?? "0");
         // input = ValidationCmd(input, 2);
 
-        // willContiue = DecideNextOptionOB(lr, input);
+        willContiue = DecideNextOptionOB(input);
     }
 }
 
-//     private static bool DecideNextOptionOB(LabRepo lr, int input)
-//     {
+    private static bool DecideNextOptionOB(int input)
+    {
 
-//         switch (input)
-//         {
-//             case 1:
-//                 {
-//                     Add50(lr);
-//                     break;
-//                 }
-//             case 2:
-//                 {
-//                     Add100(lr);
-//                     break;
-//                 }
-//             case 0:
-//             default:
-//                 {
-//                     return false;
-//                 }
-//         }
+        switch (input)
+        {
+            case 1:
+                {
+                    labRepo.Add50();
+                    break;
+                }
+            case 2:
+                {
+                    labRepo.Add100();
+                    break;
+                }
+            case 0:
+            default:
+                {
+                    return false;
+                }
+        }
 
-//         return true;
-//     }
+        return true;
+    }
 
 
 
@@ -228,30 +229,30 @@ private static void WithdrawBloodMenu()
     }
 }
 
-//     private static bool DecideNextOptionWB(LabRepo lr, int input)
-//     {
+    private static bool DecideNextOptionWB(LabRepo lr, int input)
+    {
 
-//         switch (input)
-//         {
-//             case 1:
-//                 {
-//                     Sub50(lr);
-//                     break;
-//                 }
-//             case 2:
-//                 {
-//                     Sub100(lr);
-//                     break;
-//                 }
-//             case 0:
-//             default:
-//                 {
-//                     return false;
-//                 }
-//         }
+        switch (input)
+        {
+            case 1:
+                {
+                    Sub50(lr);
+                    break;
+                }
+            case 2:
+                {
+                    Sub100(lr);
+                    break;
+                }
+            case 0:
+            default:
+                {
+                    return false;
+                }
+        }
 
-//         return true;
-//     }
+        return true;
+    }
 
 
 private static void LabKitsMenu ()
@@ -271,30 +272,30 @@ private static void LabKitsMenu ()
     }
 }
 
-//     private static bool LabKitsMenu(LabRepo lr, int input)
-//     {
+    private static bool LabKitsMenu(LabRepo lr, int input)
+    {
 
-//         switch (input)
-//         {
-//             case 1:
-//                 {
-//                     Add10(lr);
-//                     break;
-//                 }
-//             case 2:
-//                 {
-//                     Add20(lr);
-//                     break;
-//                 }
-//             case 0:
-//             default:
-//                 {
-//                     return false;
-//                 }
-//         }
+        switch (input)
+        {
+            case 1:
+                {
+                    Add10(lr);
+                    break;
+                }
+            case 2:
+                {
+                    Add20(lr);
+                    break;
+                }
+            case 0:
+            default:
+                {
+                    return false;
+                }
+        }
 
-//         return true;
-//     }
+        return true;
+    }
 
 }
 
