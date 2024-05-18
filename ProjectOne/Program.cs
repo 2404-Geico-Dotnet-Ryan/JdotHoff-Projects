@@ -6,8 +6,7 @@ class Program
     //This program will allow Scientist and Lab Assitants to order or withdrawl blood and order lab kits depending upon their role. 
     //Scientists can order or withdrawl blood and order lab kits
     //Lab Assitants can order or withdrawl blood
-    private static LabRepo labRepo = new LabRepo();
-    private static LabSystemStorage labSystemStorage = new LabSystemStorage();
+    private static LabSytstemService labSytstemService = new LabSytstemService();
 
     static void Main(string[] args)
     {
@@ -129,14 +128,14 @@ class Program
             System.Console.WriteLine("[3] Order Lab Kits");
             System.Console.WriteLine("[0] Exit");
             System.Console.WriteLine("*************************");
-            int input = int.Parse(Console.ReadLine() ?? "0");
-            //  input = ValidationCmd(input, 3);
+            int input = int.Parse(Console.ReadLine() ?? "");
+             //input = ValidationCmd(input, 3);
 
-            //  willContiue = DecideNextOptionS(lr, input);
+             willContiue = DecideNextOptionS(input);
         }
     }
 
-static bool DecideNextOptionS(LabRepo lr, int input)
+static bool DecideNextOptionS(int input)
 {
 
     switch (input)
@@ -170,7 +169,7 @@ static bool DecideNextOptionS(LabRepo lr, int input)
 
  static void OrderBloodMenu()
 {
-    System.Console.WriteLine("Current Blood Count = " + labSystemStorage.RetrieveCurrentBloodCount());
+    System.Console.WriteLine("Current Blood Count = " + labSytstemService.RetrieveCurrentBloodCount());
     bool willContiue = true;
     while (willContiue)
     {
@@ -214,7 +213,7 @@ static bool DecideNextOptionS(LabRepo lr, int input)
 
 private static void WithdrawBloodMenu()
 {
-    System.Console.WriteLine("Current Blood Count = " + labSystemStorage.RetrieveCurrentBloodCount());
+    System.Console.WriteLine("Current Blood Count = " + labSytstemService.RetrieveCurrentBloodCount());
     bool willContiue = true;
     while (willContiue)
     {
@@ -257,7 +256,7 @@ private static void WithdrawBloodMenu()
 
 private static void LabKitsMenu ()
 {
-    System.Console.WriteLine("Current Lab Kit Count = " + labSystemStorage.RetrieveCurrentLabKitCount());
+    System.Console.WriteLine("Current Lab Kit Count = " + labSytstemService.RetrieveCurrentLabKitCount());
     bool willContiue =true;
     while (willContiue)
     {
