@@ -11,9 +11,9 @@ public class LabSystemStorage
         // TODO - call InitializeLabSystems to populate dictionary when ready instead of doing the below
     
          //Create items in the lab
-       LabSystem lab1 = new (IdCounter, "Blood", 50, 0);
-       IdCounter++;
-       LabSystem lab2 = new (IdCounter, "LabKit", 0, 50);
+        LabSystem lab1 = new (IdCounter, "Blood", 50, 0);
+         IdCounter++;
+        LabSystem lab2 = new (IdCounter, "LabKit", 0, 50);
         labs = new Dictionary<int, LabSystem>();
         labs.Add(lab1.Id, lab1);
         labs.Add(lab2.Id, lab2);

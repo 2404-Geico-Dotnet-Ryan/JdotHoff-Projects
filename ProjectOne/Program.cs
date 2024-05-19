@@ -236,12 +236,12 @@ private static void WithdrawBloodMenu()
         {
             case 1:
                 {
-                    Sub50(lr);
+                    labRepo.Sub50();
                     break;
                 }
             case 2:
                 {
-                    Sub100(lr);
+                    labRepo.Sub100();
                     break;
                 }
             case 0:
@@ -279,12 +279,12 @@ private static void LabKitsMenu ()
         {
             case 1:
                 {
-                    Add10(lr);
+                    labRepo.Add10();
                     break;
                 }
             case 2:
                 {
-                    Add20(lr);
+                    labRepo.Add20();
                     break;
                 }
             case 0:

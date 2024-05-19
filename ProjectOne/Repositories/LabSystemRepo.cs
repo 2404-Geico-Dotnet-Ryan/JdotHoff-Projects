@@ -9,6 +9,8 @@ public class LabRepo
     UserStorage userStorage = new UserStorage();
     LabSystemStorage labSystemStorage = new LabSystemStorage();
 
+    LabSytstemService labSystemService = new LabSytstemService();
+
     // close class brace, you comment it out below
 
     //Input is the their login number
@@ -28,56 +30,83 @@ public class LabRepo
     //     }
     // }
 
-    //     public void Add50()
-    public int Add50();
+   
+    public int Add50()//new method 
     {
-        if (labSystemStorage.RetrieveCurrentBloodCount() >= 0);
+        int bloodCount =  labSystemService.RetrieveCurrentBloodCount();//first we call to get the current bloodcount
+        if (bloodCount >= 0)
         {
-            return (currentbloodcount + 50);
+            labSystemService.AddBlood(50);
+            return labSystemService.RetrieveCurrentBloodCount();
         }
+
+        return 0;
     }
 
-    public int Add100();
+    public int Add100()
     {
-        if (currentbloodcount >= 0);
+        int bloodCount =  labSystemService.RetrieveCurrentBloodCount();
+        if (bloodcount >= 0)
         {
-            return (currentbloodcount + 100);
+            labSystemService.AddBlood(100);
+            return labSystemService.RetrieveCurrentBloodCount();
         }
+        return 0;
     }
 
-    public void Sub50()
+    public int Sub50()
     {
-        if (currentbloodcount >= 50);
+        int bloodCount =  labSystemService.RetrieveCurrentBloodCount();
+        if (bloodcount >= 50)
         {
-            return (currentbloodcount - 50);
+            labSystemService.RemoveBlood(-50);
+            return labSystemService.RetrieveCurrentBloodCount();
         }
         else 
         {
             System.Console.WriteLine("There is not enough blood currently to withdrawl your selection.");
             System.Console.WriteLine("Please make another selection.");
         }
+        return 0;
     }
 
     public void Sub100()
     {
-        if(currentbloodcount >= 100);
+        int bloodCount =  labSystemService.RetrieveCurrentBloodCount();
+        if(bloodcount >= 100)
         {
-            return (currentbloodcount - 100);
+            labSystemService.RemoveBlood(-100);
+            return labSystemService.RetrieveCurrentBloodCount();
         }
         else 
         {
             System.Console.WriteLine("There is not enough blood currently to withdrawl your selection.");
             System.Console.WriteLine("Please make another selection.");
         }
+        return 0;
     }
 
     public void Add10()
     {
-        return (CurrentLabkitCount + 10);
+        int labKitCount =  labSystemService.RetrieveCurrentLabKitCount();
+        if(labKitCount >= 0)
+        {
+            labSystemService.AddLabKits(10);
+            return labSystemService.RetrieveCurrentLabKitCount();
+        }
+        return 0;
+        
     }
 
     public void Add20()
     {
-        return (CurrentLabkitCount + 20);
+        int labKitCount =  labSystemService.RetrieveCurrentLabKitCount();
+        if(labKitCount >= 0)
+        {
+            labSystemService.AddLabKits(20);
+            return labSystemService.RetrieveCurrentLabKitCount();
+        }
+        return 0;
+        
     }
 }
