@@ -56,7 +56,7 @@ public class LabRepo
 
     public int Sub50()
     {
-        int bloodCount =  labSystemService.RetrieveCurrentBloodCount();
+         int bloodCount =  labSystemService.RetrieveCurrentBloodCount();
         if (bloodcount >= 50)
         {
             labSystemService.RemoveBlood(-50);

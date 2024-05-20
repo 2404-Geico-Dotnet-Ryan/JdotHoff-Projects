@@ -225,7 +225,7 @@ private static void WithdrawBloodMenu()
         int input = int.Parse(Console.ReadLine() ?? "0");
         // input = ValidationCmd(input, 2);
 
-        // willContiue = DecideNextOptionWB(lr, input);
+       // willContiue = DecideNextOptionWB(input);
     }
 }
 
