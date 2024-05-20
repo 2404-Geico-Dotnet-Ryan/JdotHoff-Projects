@@ -37,9 +37,9 @@ public class LabRepo
         if (bloodCount >= 0)
         {
             labSystemService.AddBlood(50);
-            return labSystemService.RetrieveCurrentBloodCount();
+           Console.WriteLine("New Current Blood Count is =" + labSystemService.RetrieveCurrentBloodCount()); 
         }
-
+        
         return 0;
     }
 
@@ -49,7 +49,7 @@ public class LabRepo
         if (bloodCount >= 0)
         {
             labSystemService.AddBlood(100);
-            return labSystemService.RetrieveCurrentBloodCount();
+            Console.WriteLine("New Current Blood Count is =" + labSystemService.RetrieveCurrentBloodCount()); 
         }
         return 0;
     }
@@ -60,7 +60,7 @@ public class LabRepo
         if (bloodCount >= 50)
         {
             labSystemService.RemoveBlood(-50);
-            return labSystemService.RetrieveCurrentBloodCount();
+            Console.WriteLine("New Current Blood Count is =" + labSystemService.RetrieveCurrentBloodCount());
         }
         else 
         {
@@ -76,7 +76,7 @@ public class LabRepo
         if(bloodCount >= 100)
         {
             labSystemService.RemoveBlood(-100);
-            return labSystemService.RetrieveCurrentBloodCount();
+            Console.WriteLine("New Current Blood Count is =" + labSystemService.RetrieveCurrentBloodCount());
         }
         else 
         {
@@ -92,7 +92,7 @@ public class LabRepo
         if(labKitCount >= 0)
         {
             labSystemService.AddLabKits(10);
-            return labSystemService.RetrieveCurrentLabKitCount();
+            Console.WriteLine("Current LabKit Count =" + labSystemService.RetrieveCurrentLabKitCount());
         }
         return 0;
         
@@ -104,7 +104,7 @@ public class LabRepo
         if(labKitCount >= 0)
         {
             labSystemService.AddLabKits(20);
-            return labSystemService.RetrieveCurrentLabKitCount();
+           Console.WriteLine("Current LabKit Count is =" + labSystemService.RetrieveCurrentLabKitCount());
         }
         return 0;
         

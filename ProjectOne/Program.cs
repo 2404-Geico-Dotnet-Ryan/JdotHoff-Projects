@@ -180,7 +180,7 @@ static bool DecideNextOptionS(int input)
         System.Console.WriteLine("[0] Exit");
 
         int input = int.Parse(Console.ReadLine() ?? "0");
-        input = ValidationCmd(input, 2);
+        // input = ValidationCmd(input, 2);
 
         willContiue = DecideNextOptionOB(input);
     }
