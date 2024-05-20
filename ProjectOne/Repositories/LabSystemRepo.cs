@@ -45,8 +45,8 @@ public class LabRepo
 
     public int Add100()
     {
-        int bloodCount =  labSystemService.RetrieveCurrentBloodCount();
-        if (bloodcount >= 0)
+       int bloodCount =  labSystemService.RetrieveCurrentBloodCount();
+        if (bloodCount >= 0)
         {
             labSystemService.AddBlood(100);
             return labSystemService.RetrieveCurrentBloodCount();
@@ -57,7 +57,7 @@ public class LabRepo
     public int Sub50()
     {
          int bloodCount =  labSystemService.RetrieveCurrentBloodCount();
-        if (bloodcount >= 50)
+        if (bloodCount >= 50)
         {
             labSystemService.RemoveBlood(-50);
             return labSystemService.RetrieveCurrentBloodCount();
@@ -70,10 +70,10 @@ public class LabRepo
         return 0;
     }
 
-    public void Sub100()
+    public int Sub100()
     {
         int bloodCount =  labSystemService.RetrieveCurrentBloodCount();
-        if(bloodcount >= 100)
+        if(bloodCount >= 100)
         {
             labSystemService.RemoveBlood(-100);
             return labSystemService.RetrieveCurrentBloodCount();
@@ -86,7 +86,7 @@ public class LabRepo
         return 0;
     }
 
-    public void Add10()
+    public int Add10()
     {
         int labKitCount =  labSystemService.RetrieveCurrentLabKitCount();
         if(labKitCount >= 0)
@@ -98,7 +98,7 @@ public class LabRepo
         
     }
 
-    public void Add20()
+    public int Add20()
     {
         int labKitCount =  labSystemService.RetrieveCurrentLabKitCount();
         if(labKitCount >= 0)

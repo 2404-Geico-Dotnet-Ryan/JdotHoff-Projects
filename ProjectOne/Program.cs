@@ -130,7 +130,7 @@ class Program
             System.Console.WriteLine("[0] Exit");
             System.Console.WriteLine("*************************");
             int input = int.Parse(Console.ReadLine() ?? "");
-             //input = ValidationCmd(input, 3);
+            //  input = ValidationCmd(input, 3);
 
              willContiue = DecideNextOptionS(input);
         }
@@ -177,9 +177,10 @@ static bool DecideNextOptionS(int input)
         System.Console.WriteLine("How many units of blood do you want to order?");
         System.Console.WriteLine("[1] 50 Units");
         System.Console.WriteLine("[2] 100 Units");
+        System.Console.WriteLine("[0] Exit");
 
         int input = int.Parse(Console.ReadLine() ?? "0");
-        // input = ValidationCmd(input, 2);
+        input = ValidationCmd(input, 2);
 
         willContiue = DecideNextOptionOB(input);
     }
@@ -221,15 +222,16 @@ private static void WithdrawBloodMenu()
         System.Console.WriteLine("How many units of blood do you want to withdrawl?");
         System.Console.WriteLine("[1] 50 Units");
         System.Console.WriteLine("[2] 100 Units");
+        System.Console.WriteLine("[0] Exit");
 
         int input = int.Parse(Console.ReadLine() ?? "0");
         // input = ValidationCmd(input, 2);
 
-       // willContiue = DecideNextOptionWB(input);
+       willContiue = DecideNextOptionWB(input);
     }
 }
 
-    private static bool DecideNextOptionWB(LabRepo lr, int input)
+    private static bool DecideNextOptionWB(int input)
     {
 
         switch (input)
@@ -264,15 +266,16 @@ private static void LabKitsMenu ()
         System.Console.WriteLine("How many Lab Kits do you want to order?");
         System.Console.WriteLine("[1] 10 Units");
         System.Console.WriteLine("[2] 20 Units");
+        System.Console.WriteLine("[0] Exit");
 
         int input = int.Parse(Console.ReadLine() ?? "0");
         input = ValidationCmd(input, 2);
 
-        // willContiue = DecideNextOptionLK(lr, input);
+        willContiue = LabKitsMenu(input);
     }
 }
 
-    private static bool LabKitsMenu(LabRepo lr, int input)
+    private static bool LabKitsMenu(int input)
     {
 
         switch (input)
