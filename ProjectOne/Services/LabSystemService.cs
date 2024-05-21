@@ -37,18 +37,18 @@ public class LabSytstemService
     public void RemoveBlood(int bloodCount)
     {
        var targetLabSystem = labStorage.labs.Where(x => x.Value.ItemName == "Blood").First();
-       targetLabSystem.Value.CurrentBloodCount -= bloodCount;
+       targetLabSystem.Value.CurrentBloodCount += bloodCount;
     }
 
     public void AddLabKits(int labKitCount)
     {
         var targetLabSystem = labStorage.labs.Where(x => x.Value.ItemName == "LabKit").First();
-        targetLabSystem.Value.CurrentBloodCount += labKitCount;
+        targetLabSystem.Value.CurrentLabkitCount += labKitCount;
     }
 
     public void RemoveLabkits(int labKitCount)
     {
        var targetLabSystem = labStorage.labs.Where(x => x.Value.ItemName == "LabKit").First();
-       targetLabSystem.Value.CurrentBloodCount -= labKitCount;
+       targetLabSystem.Value.CurrentLabkitCount -= labKitCount;
     }       
 }
