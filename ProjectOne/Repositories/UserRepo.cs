@@ -4,14 +4,21 @@ using System.Collections;
 public class UserRepo
 {
 
+ private readonly string _connectionString;
+
+    //Dependency Injection -> Constructor Injection
+    public UserRepo(string connString)
+    {
+        _connectionString = connString;
+    }
 
     UserStorage userStorage = new();
 
+ 
+ 
+ 
+ 
     //add, get-one, get-all, update, delete
-
-
-    
-
     public User? GetUser(int id)
     {
         // Alternative approach that breaks each step down.

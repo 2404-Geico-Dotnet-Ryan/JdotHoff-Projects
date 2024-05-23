@@ -9,8 +9,41 @@ class Program
     private static LabSytstemService labSytstemService = new LabSytstemService();
     private static LabRepo labRepo = new LabRepo();
 
+    static UserService us;
+    static User? currentUser = null;
+
     static void Main(string[] args)
+     {
+        //Strings with an @ in front will provide you additional flexibility when creating strings.
+        string path = @"C:\\Users\\U1J447\\Revature\\Practice\\JdotHoff-Projects\\JdotHoff-ProjectDB.txt";
+       
+        string connectionString = File.ReadAllText(path);
+
+        UserRepo ur = new(connectionString);
+        us = new(ur);
+
+        LabRepo lr = new(); // <-- we'll need to add the connection string in the near future
+        labSytstemService = new(lr);
+
+        //Lets just quickly test the Repo all by itself - and then if it works
+        //we can assume nothing else changed -> therefore it should integrate cleanly into the app.
+
+        // User newUser = new(0, "brian", "pass4", "user");
+        // System.Console.WriteLine("Add User: " + ur.AddUser(newUser));
+
+        //Test Get 1, Update and Delete.
+        // User u = ur.GetUser(13) ?? new();
+        // System.Console.WriteLine("Get User: " + u);
+        // u.Password += "000";
+        // System.Console.WriteLine("Updated User: " + ur.UpdateUser(u));
+        // System.Console.WriteLine("Deleted User: " + ur.DeleteUser(u));
+
+
+        // InitMenu();
+    }
+     private static void InitMenu()
     {
+    
         // Users Service
         var usersService = new UserService();
 

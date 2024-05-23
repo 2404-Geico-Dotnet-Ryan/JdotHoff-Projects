@@ -1,0 +1,1 @@
+Data Source=GEIPW0785MY;Initial Catalog=JdotHoff-Project;Integrated Security=True;MultipleActiveResultSets=True;TrustServerCertificate=True;
