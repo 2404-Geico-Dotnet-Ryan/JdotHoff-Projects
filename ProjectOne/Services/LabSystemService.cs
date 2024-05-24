@@ -2,31 +2,44 @@
 public class LabSytstemService
 {
     LabSystemStorage labStorage = new LabSystemStorage();
-     public int RetrieveCurrentBloodCount()
+    private LabRepo lr;
+    private readonly string connectionString;
+
+    // public LabSytstemService(LabRepo lr)
+    // {
+    //     this.lr = lr;
+    // }
+
+    public LabSytstemService(string connectionString)
     {
-        int count = 0;
-        foreach(var item in labStorage.labs)
-        {
-           if(item.Value.ItemName == "Blood")
-           {
-            count += item.Value.CurrentBloodCount;
-           }
-        }
-        return count;
+        this.connectionString = connectionString;
     }
 
-    public int RetrieveCurrentLabKitCount()
-    {
-        int count = 0;
-        foreach(var item in labStorage.labs)
-        {
-           if(item.Value.ItemName == "LabKit")
-           {
-            count += item.Value.CurrentLabkitCount;
-           }
-        }
-        return count;
-    }
+    // public int RetrieveCurrentBloodCount()
+    // {
+    //     int count = 0;
+    //     foreach(var item in labStorage.labs)
+    //     {
+    //        if(item.Value.ItemName == "Blood")
+    //        {
+    //         count += item.Value.CurrentBloodCount;
+    //        }
+    //     }
+    //     return count;
+    // }
+
+    // public int RetrieveCurrentLabKitCount()
+    // {
+    //     int count = 0;
+    //     foreach(var item in labStorage.labs)
+    //     {
+    //        if(item.Value.ItemName == "LabKit")
+    //        {
+    //         count += item.Value.CurrentLabkitCount;
+    //        }
+    //     }
+    //     return count;
+    // }
 
     public void AddBlood(int bloodCount)
     {

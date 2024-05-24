@@ -6,8 +6,8 @@ class Program
     //This program will allow Scientist and Lab Assitants to order or withdrawl blood and order lab kits depending upon their role. 
     //Scientists can order or withdrawl blood and order lab kits
     //Lab Assitants can order or withdrawl blood
-    private static LabSytstemService labSytstemService = new LabSytstemService();
-    private static LabRepo labRepo = new LabRepo();
+    private static LabSytstemService labSytstemService = null;
+    public static LabRepo labRepo = null;
 
     static UserService us;
     static User? currentUser = null;
@@ -18,12 +18,13 @@ class Program
         string path = @"C:\\Users\\U1J447\\Revature\\Practice\\JdotHoff-Projects\\JdotHoff-ProjectDB.txt";
        
         string connectionString = File.ReadAllText(path);
+        us = new(connectionString);
 
-        UserRepo ur = new(connectionString);
-        us = new(ur);
+        //LabRepo lr = new(); // <-- we'll need to add the connection string in the near future
+        labSytstemService = new LabSytstemService(connectionString);
+        labRepo = new LabRepo(connectionString);
 
-        LabRepo lr = new(); // <-- we'll need to add the connection string in the near future
-        labSytstemService = new(lr);
+        InitMenu(connectionString);
 
         //Lets just quickly test the Repo all by itself - and then if it works
         //we can assume nothing else changed -> therefore it should integrate cleanly into the app.
@@ -41,12 +42,8 @@ class Program
 
         // InitMenu();
     }
-     private static void InitMenu()
+     private static void InitMenu(string connectionString)
     {
-    
-        // Users Service
-        var usersService = new UserService();
-
         //First they want to log in to the application to see what they can do. 
         System.Console.WriteLine("_________________________");
         System.Console.WriteLine("     Lab Order Inc.      ");
@@ -62,6 +59,10 @@ class Program
         attemptedLoggedInUser.UserLogin = userLogin;
         attemptedLoggedInUser.FirstName = firstName;
 
+          // // Users Service
+
+        var usersService = new UserService(connectionString);
+
         User loggedInUser = usersService.Signin(attemptedLoggedInUser.UserLogin, attemptedLoggedInUser.FirstName);
 
 
@@ -69,7 +70,7 @@ class Program
         {
             System.Console.WriteLine("Your login was successful!");
 
-            MainMenuScientist();
+            MainMenuScientist(connectionString);
 
             // #ERROR this method takes a labrepo has a parameter
             //MainMenuScientist(labRepo);
@@ -78,7 +79,7 @@ class Program
         {
             System.Console.WriteLine("Your login was successful!");
 
-            MainMenuLab();
+            MainMenuLab(connectionString);
         }
         else
         {
@@ -88,7 +89,7 @@ class Program
 
 
     //This is the menu for the Lab Assistants
-    static void MainMenuLab()
+    static void MainMenuLab(string connectionString)
     {
 
         System.Console.WriteLine("Welcome! ");
@@ -105,22 +106,22 @@ class Program
             int input = int.Parse(Console.ReadLine() ?? "0");
             input = ValidationCmd(input, 2);
 
-            willContiue = DecideNextOptionL(input);
+            willContiue = DecideNextOptionL(input, connectionString);
         }
     }
 
-    private static bool DecideNextOptionL(int input)
+    private static bool DecideNextOptionL(int input, string connectionString)
     {
      switch (input)
         {
             case 1:
                 {
-                    OrderBloodMenu();
+                    OrderBloodMenu(connectionString);
                     break;
                 }
             case 2:
                 {
-                    WithdrawBloodMenu();
+                    WithdrawBloodMenu(connectionString);
                     break;
                 }
             case 0:
@@ -149,7 +150,7 @@ class Program
    
 
 
-    static void MainMenuScientist()
+    static void MainMenuScientist(string connectionString)
     {
         System.Console.WriteLine("Welcome! ");
         bool willContiue = true;
@@ -165,28 +166,28 @@ class Program
             int input = int.Parse(Console.ReadLine() ?? "");
             //  input = ValidationCmd(input, 3);
 
-             willContiue = DecideNextOptionS(input);
+             willContiue = DecideNextOptionS(input, connectionString);
         }
     }
 
-static bool DecideNextOptionS(int input)
+static bool DecideNextOptionS(int input, string connectionString)
 {
 
     switch (input)
     {
         case 1:
             {
-                OrderBloodMenu();
+                OrderBloodMenu(connectionString);
                 break;
             }
         case 2:
             {
-                WithdrawBloodMenu();
+                WithdrawBloodMenu(connectionString);
                 break;
             }
         case 3:
             {
-                LabKitsMenu();
+                LabKitsMenu(connectionString);
                 break;
             }
 
@@ -201,9 +202,9 @@ static bool DecideNextOptionS(int input)
 }
 
 
- static void OrderBloodMenu()
+ static void OrderBloodMenu(string connectionString)
 {
-    System.Console.WriteLine("Current Blood Count = " + labSytstemService.RetrieveCurrentBloodCount());
+    System.Console.WriteLine("Current Blood Count = " + labRepo.RetrieveBloodCount(connectionString));
     bool willContiue = true;
     while (willContiue)
     {
@@ -246,9 +247,9 @@ static bool DecideNextOptionS(int input)
 
 
 
-private static void WithdrawBloodMenu()
+private static void WithdrawBloodMenu(string connectionString)
 {
-    System.Console.WriteLine("Current Blood Count = " + labSytstemService.RetrieveCurrentBloodCount());
+    System.Console.WriteLine("Current Blood Count = " + labRepo.RetrieveBloodCount(connectionString));
     bool willContiue = true;
     while (willContiue)
     {
@@ -290,9 +291,9 @@ private static void WithdrawBloodMenu()
     }
 
 
-private static void LabKitsMenu ()
+private static void LabKitsMenu(string connectionString)
 {
-    System.Console.WriteLine("Current Lab Kit Count = " + labSytstemService.RetrieveCurrentLabKitCount());
+    System.Console.WriteLine("Current Lab Kit Count = " + labRepo.RetrieveLabKitCount(connectionString));
     bool willContiue =true;
     while (willContiue)
     {

@@ -1,11 +1,17 @@
 public class UserService
 {
-        UserRepo ur = new UserRepo();
+        UserRepo ur = null;
+
+    public UserService(string connectionString)
+    {
+        this.ur = new UserRepo(connectionString);
+    }
+
     //Register - this is not prompting the user for input, but rather taking in a User object.
 
-   
-    
-//Login below will not use the User object, but rather pass in the information needed to login.
+
+
+    //Login below will not use the User object, but rather pass in the information needed to login.
 
     public User? Signin (int UserLogin, string FirstName)//; #ERROR no semicolon after a method declaration
     {   
