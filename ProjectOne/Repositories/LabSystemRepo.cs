@@ -32,6 +32,8 @@ public class LabRepo
     //     }
     // }
 
+
+ //Dependency Injection -> Constructor Injection
     public LabRepo(string connectionString)
     {
         labSystemService = new LabSytstemService(connectionString);
@@ -39,13 +41,13 @@ public class LabRepo
     }
 
    
-    public int Add50()//new method 
+    public int Add50()//new method - access modifier-public, return type- int, method name-Add50, parameter is empty
     {
         int bloodCount =  RetrieveBloodCount(_connectionString);//first we call to get the current bloodcount
-        if (bloodCount >= 0)
+        if (bloodCount >= 0)//If condition
         {
-            AddBlood(50);
-           Console.WriteLine("New Current Blood Count is =" + RetrieveBloodCount(_connectionString)); 
+            AddBlood(50); //statement for if condition
+           Console.WriteLine("New Current Blood Count is =" + RetrieveBloodCount(_connectionString)); //statement for if condition
         }
         
         return 0;
@@ -62,18 +64,18 @@ public class LabRepo
         return 0;
     }
 
-    public int Sub50()
+    public int Sub50() //new method: access modifier-public, return type- int, method name-Sub50, parameter is empty
     {
-         int bloodCount =  RetrieveBloodCount(_connectionString);
-        if (bloodCount >= 50)
+         int bloodCount =  RetrieveBloodCount(_connectionString); //first we call to get the current bloodcount
+        if (bloodCount >= 50)//If condition
         {
-            UpdateBlood(bloodCount,-50);
-            Console.WriteLine("New Current Blood Count is =" + RetrieveBloodCount(_connectionString));
+            UpdateBlood(bloodCount,-50);//statement for if condition
+            Console.WriteLine("New Current Blood Count is =" + RetrieveBloodCount(_connectionString));//statement for if condition
         }
         else 
         {
-            System.Console.WriteLine("There is not enough blood currently to withdrawl your selection.");
-            System.Console.WriteLine("Please make another selection.");
+            System.Console.WriteLine("There is not enough blood currently to withdrawl your selection.");//statement for other condition
+            System.Console.WriteLine("Please make another selection.");//statement for other condition
         }
         return 0;
     }

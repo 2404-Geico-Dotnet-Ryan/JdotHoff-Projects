@@ -1,6 +1,6 @@
 
 // #ERRROR you cannot use a class in another if it is not public
-public class User
+public class User 
 {
     
     public int UserId{set; get; } //will start at 1 
@@ -10,13 +10,13 @@ public class User
     public string LastName {get; set; }
     public string UserTitle {get; set; }
 
-    //*NO Arguments Constructor
+    //*NO Arguments Constructor--takes in no arguments/parameters
     public User ()
     {
 
     }
 
-    //Full Arugument Constructor
+    //Full Arugument Constructor-// access modifier-public, 
     public User(int userId, int userType, int userLogin, string firstName, string lastName, string usertitle)
     {
     UserId = userId;    

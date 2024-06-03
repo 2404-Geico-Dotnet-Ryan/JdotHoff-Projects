@@ -20,7 +20,7 @@ public class LabSystem
         CurrentLabkitCount = currentlabkitcount; 
     }
 
-    public override string ToString()
+    public override string ToString() //returns a string that represents the current object
     {
        string newString = "";
         newString += "{Id " + Id;
